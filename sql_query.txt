@@ -1,0 +1,15 @@
+SELECT * FROM CSAB_Seat_Allotment
+WHERE 
+	gender != 'Female-only (including Supernumerary)'
+	AND seat_type = 'OPEN'
+	AND quota NOT IN ('DASA-CIWG', 'DASA-Non CIWG', 'Home State for Goa', 'Jammu & Kashmir (UT)', 'Ladakh (UT)')
+	AND 85000 BETWEEN opening_rank AND closing_rank
+ORDER BY round, institute_name, quota;
+
+SELECT * FROM CSAB_Seat_Allotment
+WHERE 
+        gender != 'Female-only (including Supernumerary)'
+        AND seat_type = 'OBC-NCL' 
+        AND quota NOT IN ('DASA-CIWG', 'DASA-Non CIWG', 'Home State for Goa', 'Jammu & Kashmir (UT)', 'Ladakh (UT)')
+        AND 291402 BETWEEN opening_rank AND closing_rank
+ORDER BY round, institute_name, academic_program, quota, seat_type;
